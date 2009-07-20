@@ -55,11 +55,7 @@ module BeyondThePath
         end
 
         def format_identifier(s)
-          s.gsub!(/'/,'') # remove characters that occur mid-word
-          s.gsub!(/[\W]/,' ') # translate non-words into spaces
-          s.strip! # remove spaces from the ends
-          s.gsub!(/\ +/,'-') # replace spaces with hyphens
-          s.downcase # lowercase what's left
+          s.parameterize
         end
 
       end
